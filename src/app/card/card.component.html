@@ -1,0 +1,15 @@
+<div class="card" style="background:#dc3545;color:white">
+    <div class="card-header" style="text-align: center;">Shopping Cart</div>
+    <div class="card-body">
+      <p>Total: ${{total}}</p>
+      <p>Items bought:</p>
+      <ul>
+        <li *ngFor="let cart of listCart ; let i = index">{{cart.name}}-Số lượng:{{cart.quantity}}</li>
+        <!-- <li>Tea-4</li> -->
+        <!-- <li>Milk-8</li> -->
+      </ul>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-light">CheckOut</button>
+    </div>
+  </div>

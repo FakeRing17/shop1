@@ -1,0 +1,26 @@
+<div class="card-columns">
+
+    <div class="card" *ngFor="let product of products ; let i = index">
+      <div class="card-body text-center">
+        <img class="card-img-top" src={{product.picture}} alt="Card image"style="width:100%">
+        <h4 class="card-title">{{product.name}}</h4>
+        <p class="card-text">Price: {{product.price | currency}}</p>
+        <!-- <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="100"[(ngModel)]="quantity[i]"> -->
+        <a href="#" *ngIf="checkCart(i); else elseBlock" class="btn btn-primary" (click)="addCart(product,i)">Remove
+          From Cart</a>
+        <ng-template #elseBlock>
+          <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="100"[(ngModel)]="quantity[i]">
+          <a href="#" *ngIf="quantity[i]>0; else elseBlock" class="btn btn-primary" (click)="addCart(product,i)">Add To
+            Cart</a>
+          <ng-template #elseBlock>
+            <button type="button" class="btn btn-primary no_add">Add To Cart</button>
+          </ng-template>
+        </ng-template>
+        <!-- <a href="#" *ngIf="quantity[i]>0; else elseBlock" class="btn btn-primary" (click)="addCart(product,i)">Add To
+          Cart</a>
+        <ng-template #elseBlock>
+          <button type="button" class="btn btn-primary no_add">Add To Cart</button>
+        </ng-template> -->
+      </div>
+    </div>
+  </div>

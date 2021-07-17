@@ -1,0 +1,11 @@
+<div class="card-columns">
+  <div class="card" style="width:400px" *ngFor="let product of products ; let i = index">
+    <div class="card-body text-center">
+      <img class="card-img-top" src={{product.picture}} alt="Card image"style="width:100%">
+      <h4 class="card-title">{{product.name}}</h4>
+      <p class="card-text">Price: {{product.price | currency}}</p>
+      <a href="#" class="btn btn-primary">Buy</a>
+    </div>
+  </div>
+
+</div>
